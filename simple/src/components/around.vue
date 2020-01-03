@@ -1,4 +1,6 @@
 <template>
+<div>
+    <Navigation></Navigation>
     <div class="around_wrap">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, aliquid odio architecto, id minima error quis excepturi blanditiis reiciendis asperiores, laudantium corrupti neque velit odit amet dicta dolores labore qui placeat? Impedit quisquam natus neque consequuntur rem eaque pariatur! Magni dolorum totam perferendis quo qui reprehenderit quaerat molestiae doloribus recusandae.</p>
         <ul class="inside_wrap">
@@ -7,6 +9,7 @@
                <img v-bind:src="insides.url" alt="">
             </li>
         </ul>
+    </div>
     </div>
 </template>
 <script>

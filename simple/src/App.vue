@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-    <!-- <router-view></router-view> -->
     <knock></knock>
-    <around></around>
   </div>
 </template>
 
 <script>
 import knock from './components/knock.vue'
-import around from './components/around.vue'
+// import around from './components/around.vue'
+// import menu from './components/menu.vue'
+// import reservation from './components/reservation.vue'
+
 
 export default {
   name: 'app',
   components:{
     'knock':knock,
-    'around':around
-
+    // 'around':around,
+    // 'menu':menu,
+    // 'reservation':reservation
   }
 
 }
