@@ -9,22 +9,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-// Vue.use(VueRouter);
-
-// const routes = [
-//   {
-//     path: '/',
-//     component: knock
-//  },
-//  {
-//     path: '/around',
-//     component: around
-//  }
-// ];
-// // router 객체생성
-// const router = new VueRouter({
-// routes
-// });
+// Vue.use(VueRouter); //vue router 확장기능 선언
 
 
 /* eslint-disable no-new */
