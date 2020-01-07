@@ -1,7 +1,6 @@
 <template>
     <div class="knock_wrap"> 
         <Navigation></Navigation>
-        <!-- <Mainpage></Mainpage> -->
         <router-view/>
         <Footer></Footer>
     </div>
@@ -14,6 +13,7 @@ import Footer from '././footer.vue'
 import around from './around.vue'
 import menu from './menu.vue'
 import reservation from './reservation.vue'
+import detail from './detail.vue'
 
 export default{
     name:'knock',
@@ -23,7 +23,8 @@ export default{
         'Footer':Footer,
         'around':around,
         'menu':menu,
-        'reservation':reservation
+        'reservation':reservation,
+        'detail':detail
     },
     
 }
@@ -31,7 +32,7 @@ export default{
 
 <style>
 .knock_wrap{
-    border:2px solid blue;
+    /* border:2px solid blue; */
     width:90%;
     margin: 2rem auto;
     min-width:900px;

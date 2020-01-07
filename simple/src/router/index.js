@@ -4,6 +4,7 @@ import mainpage from '@/components/mainpage'
 import around from '@/components/around'
 import menu from '@/components/menu'
 import reservation from '@/components/reservation'
+import detail from '@/components/detail'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
       name:'reservation',
       component:reservation
     },
-
+    {
+      path: '/detail',
+      name:'detail',
+      component:detail
+    },
   ]
 })

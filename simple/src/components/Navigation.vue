@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="navigation_wrap">
         <div class=knockName><router-link to="/Mainpage"> Hello World</router-link></div> 
         <nav class="navigation">
             <router-link v-for="routes in links"
@@ -45,26 +45,35 @@ export default {
 }
 </script>
 <style scoped>
+body a{
+    font-family: 'Ma Shan Zheng', cursive;
+    color:rgba(20, 20, 20, 0.7);
+    letter-spacing: 2px;
+}
+.navigation_wrap{
+    margin: 0 0 1rem 0;
+}
 .knockName{
-    bordeR:2px solid green;
     text-align: center;
     font-size: 3rem;
-    margin: 0  0 2rem 0;
-    
+    margin: 0  0 1rem 0;
+    font-family: 'Ma Shan Zheng', cursive;
+    color:rgba(20, 20, 20, 0.7);
 }
     .navigation{
-    border:2px solid red;
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
 }
 .navigation>*{
+    border:1px solid  #004d00;
     flex:1;
-    border:2px solid orange;
     text-decoration: none;
     text-align: center;
-    padding:10px 0;
-    font-size: 1.3rem;
+    padding:0;
+    font-size: 2rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    color:rgba(20, 20, 20, 0.7);
 }
 </style>
