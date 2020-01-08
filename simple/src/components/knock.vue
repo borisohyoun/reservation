@@ -11,7 +11,7 @@ import Navigation from '././Navigation.vue'
 import Mainpage from '././mainpage.vue'
 import Footer from '././footer.vue'
 import around from './around.vue'
-import menu from './menu.vue'
+import food from './food.vue'
 import reservation from './reservation.vue'
 import detail from './detail.vue'
 
@@ -22,7 +22,7 @@ export default{
         'Mainpage':Mainpage,
         'Footer':Footer,
         'around':around,
-        'menu':menu,
+        'food':food,
         'reservation':reservation,
         'detail':detail
     },

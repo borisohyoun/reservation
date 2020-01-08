@@ -2,7 +2,7 @@
 <div>
     <Navigation></Navigation>
     <div class="child_wrap">
-            <router-link to="/menu" class="come_pic menu"><img v-bind:src="images.menu"/> <span class="over_text">메뉴보기</span></router-link>
+            <router-link to=/food class="come_pic menu"><img v-bind:src="images.menu"/> <span class="over_text">메뉴보기</span></router-link>
             <span class="mascot"><img v-bind:src="images.mascot"/></span>
             <router-link to="/around" class="come_pic around"><img v-bind:src="images.around"/> <span class="over_text">둘러보기</span></router-link>
             <router-link to="/reservation" class="come_pic reservation"><img v-bind:src="images.reserve"/> <span class="over_text">예약하기</span> </router-link>

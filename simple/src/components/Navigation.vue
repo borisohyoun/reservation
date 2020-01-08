@@ -25,7 +25,7 @@ export default {
             { 
                 id: 2,
                 text: 'menu', 
-                page: '/menu' 
+                page: '/food' 
             }, 
             { 
                 id: 3,

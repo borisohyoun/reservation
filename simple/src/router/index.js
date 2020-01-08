@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import mainpage from '@/components/mainpage'
 import around from '@/components/around'
-import menu from '@/components/menu'
+import food from '@/components/food'
 import reservation from '@/components/reservation'
 import detail from '@/components/detail'
 
@@ -22,9 +22,9 @@ export default new Router({
       component:around
     },
     {
-      path: '/menu',
-      name:'menu',
-      component:menu
+      path: '/food',
+      name:'food',
+      component:food
     },
     {
       path: '/reservation',
