@@ -1,26 +1,14 @@
 <template>
     <div>
         <ul class="footer">
-            <div>
-            <button v-on:click="cal = !cal" >
-                <i class="far fa-clock"></i>
-            </button>
-            <transition name ="fade">
-                <p v-if="cal">010-5426-3424</p>
-            </transition>
-            </div>
-
+    
+                <button v-on:click="calText" >
+                    <i class="far fa-clock"></i>
+                </button>
             <li v-on:mouseover="github" class="fab fa-github"></li>
             <li v-on:mouseover="blog" class="fas fa-rss-square"></li>
             <li v-on:mouseover="contact" class="fas fa-mobile-alt"></li>
             <li v-on:mouseover="goTop" class="fas fa-arrow-up"></li>
-            
-  <button v-on:click="show = !show">
-    Toggle
-  </button>
-  <transition name="fade">
-    <p v-if="show">hello</p>
-  </transition>
         </ul>
     </div>
 </template>
@@ -29,10 +17,14 @@ export default {
     name:'Footer',
     data(){
         return{
-            show: true
+            cal: false,
+            hover: false,
         }
     },
     methods:{
+        calText:function(event){
+            alert('hello');
+        }
     }
 }
 </script>

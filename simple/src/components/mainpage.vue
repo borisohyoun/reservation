@@ -26,7 +26,7 @@ export default {
         }  
 }
 </script>
-<style>
+<style scoped>
     .child_wrap{
     border:2px solid black;
     margin:2rem 0; 

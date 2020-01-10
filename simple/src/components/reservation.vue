@@ -1,29 +1,24 @@
 <template>
     <div>
         <div class="shop_wrap">
-            <ul class="shop_list">
-                <li class="list_item" v-for="item in list">
-                    <b-card-group deck>
-                    <b-card  img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
-                    <!-- <b-card
-                        img-alt="Image"
-                        img-top
-                        tag="article"
-                        style="max-width: 20rem;"
-                        class="mb-2"
-                    > -->
-                        <img v-bind:src="images.url" v-bind:alt="item.alt" class="is"/>
-                    <b-card-text>
-                            <p class="item_title">{{ item.name }}</p>
-                            <p class="item_explain">{{ item.explain }}</p>
-                            <p class="item_price if"> {{ item.price }}원 </p>
+            <b card group deck class="shop_list"> 
+                <b-card img-src="https://picsum.photos/400/200/?image=41" img-alt="Image" img-top class="list_item" v-for="item in items">
+                    <b-card-text class="bc_text">
+                        <p class="item_title">{{ item.name }}</p>
+                        <p class="item_explain">{{ item.explain }}</p>
+                        <p class="item_price if"> {{ item.price }}원 </p>
                     </b-card-text>
-                    <b-button href="#" variant="primary" class="if" v-on:mouseover="hove_btn" v-on:mouseleave="hove_btn" >결제하기</b-button>
-                    <b-button href="#" variant="primary" class="if" v-on:mouseover="hove_btn" v-on:mouseleave="hove_btn" ><i class="fas fa-cart-plus"></i></b-button>
-                    </b-card>
-                </b-card-group>
-                </li>
-            </ul>
+                    <template v-slot:footer>
+                        <span class="text-muted">
+                            <button v-on:click="minusCart(event,item)" class="fas fa-minus"></button>
+                            <span class="show_count">{{ counter }}</span>
+                            <button v-on:click="plusCart(event,item)" class="fas fa-plus"></button>
+                        </span>
+                        <b-button href="#" variant="primary" class="if" >결제하기</b-button>
+                        <b-button href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
+                    </template>
+                </b-card>
+            </b>
         </div>
     </div>
 </template>
@@ -33,24 +28,29 @@ export default {
     name:'reservation',
     data(){
         return{
-            list:[
-                { id:0, name:'사과', explain:'맛좋은 사과', price:'6500', url:'https://picsum.photos/300/300/?image=41', alt:"apple"},
-                { id:1, name:'딸기', explain:'겨울철 딸기', price:'4800', url:'././assetes/2.png', alt:"straberry"},
-                { id:2, name:'배', explain:'나주 배 나주 곰탕', price:'2300', url:'././assetes/3.png', alt:"pear"},
-                { id:3, name:'포도', explain:'씨있는 포도는 싫어', price:'1000', url:'././assetes/4.png', alt:"grape"}
-            ],
+            items:{
+                apple:{ id:0, name:'사과', explain:'맛좋은 사과', price:'6500', url:'https://picsum.photos/300/300/?image=41', alt:"apple"},
+                strawbrerry:{ id:1, name:'딸기', explain:'겨울철 딸기', price:'4800', url:'././assetes/2.png', alt:"straberry"},
+                pear:{ id:2, name:'배', explain:'나주 배 나주 곰탕', price:'2300', url:'././assetes/3.png', alt:"pear"},
+                grape:{ id:3, name:'포도', explain:'씨있는 포도는 싫어', price:'1000', url:'././assetes/4.png', alt:"grape"}
+            },
             images:{
                     mascot:require('@/assets/1.png'),
                     menu:require('@/assets/apple.jpg'),
                     around:require('@/assets/lboricat.jpg'),
                     reserve:require('@/assets/nanacat.jpg'),
                 },
-            
+            counter:0
         }
     },
     methods:{
-            hove_btn:function(event){
-			this.timer= setInterval(3000);
+            minusCart:function(event,item){
+                
+                    this.counter -= 1
+                
+            },
+            plusCart:function(event,item){
+                    this.counter += 1
             }
         }
 }
@@ -59,31 +59,36 @@ export default {
 <style scoped>
 .shop_wrap{
     border:2px solid brown;
+    overflow: hidden;
+    min-width:1024px;
 }
 .shop_list{
     border:2px solid navy;
-    margin: 1rem auto;
-    padding: 0;
+    /* width:px; */
+    /* min-width:1024px; */
+    overflow: hidden;
+    margin:0  auto;
+    
 }
 .list_item{
     border:2px solid seagreen;
-    list-style: none;
-    display: inline-flex;
-    margin: 0.5rem;
-    min-width: 250px;
+    margin: 1rem;
+    float: left;
+    max-width:260px;
+    height:400px;
+    position: relative;
+}
+.card-body{
+    padding: 0.5rem 1rem;
 }
 .is{
     color:skyblue;
-    /* max-width: 20rem; */
-    /* height:200px;
-    width:400px; */
     border:2px solid skyblue;
 }
 img{
     color:skyblue;
     /* max-width: 20rem; */
-    height:200px;
-    /* width:400px; */
+    height:160px;
     border:2px solid skyblue;
 }
 .item_title{
@@ -108,4 +113,8 @@ img{
 .btn-primary:hover{
     background: darkgreen;
 }
+.text_muted{
+    border:2px solid red;
+}
+
 </style>

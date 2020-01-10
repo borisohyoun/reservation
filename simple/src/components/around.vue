@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navigation></Navigation>
     <div class="around_wrap">
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
         <br>Ea, aliquid odio architecto, id minima error quis excepturi blanditiis <br>
@@ -21,7 +20,7 @@
             v-on:sliding-end="onSlideEnd"
             >
           <b-carousel-slide v-for="scene in scenes" v-html="scene.caption" v-bind:alt="scene.alt"
-          img-src="scene.src" class="scene_box">
+          img v-bind:src="scene.src" class="scene_box">
           </b-carousel-slide>
 
           <!-- <hr>

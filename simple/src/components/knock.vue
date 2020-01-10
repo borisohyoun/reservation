@@ -32,10 +32,8 @@ export default{
 
 <style>
 .knock_wrap{
-    /* border:2px solid blue; */
-    width:90%;
-    margin: 2rem auto;
-    min-width:900px;
+    margin: 0.5rem auto;
+    min-width:1024px;
 }
 
 
