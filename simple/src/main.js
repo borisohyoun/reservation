@@ -7,7 +7,9 @@ import BootstrapVue from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'es6-promise/auto'
 
+import { store } from "./store"
 /* configs ... */
 
 Vue.config.productionTip = false
@@ -20,5 +22,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  store :store,
   template: '<App/>'
 })

@@ -10,9 +10,12 @@
                     </b-card-text>
                     <template v-slot:footer>
                         <span class="text-muted">
-                            <button v-on:click="minusCart(event,item)" class="fas fa-minus"></button>
+                            Parent counter : {{ $store.state.counter }} <br />
+                            <button v-on:click="minusCart" ><i class="fas fa-minus"></i></button>
                             <span class="show_count">{{ counter }}</span>
-                            <button v-on:click="plusCart(event,item)" class="fas fa-plus"></button>
+                            <button v-on:click="plusCart"> <i class="fas fa-plus"></i></button>
+
+                            <child></child>
                         </span>
                         <b-button href="#" variant="primary" class="if" >결제하기</b-button>
                         <b-button href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
@@ -24,6 +27,7 @@
 </template>
 
 <script>
+import Child from './Child.vue'
 export default {
     name:'reservation',
     data(){
@@ -40,17 +44,18 @@ export default {
                     around:require('@/assets/lboricat.jpg'),
                     reserve:require('@/assets/nanacat.jpg'),
                 },
-            counter:0
+            // counter:0 vuex에서 밑에 methods로 넘겨받게 됨. 
         }
     },
+    components:{
+        child:Child
+    },
     methods:{
-            minusCart:function(event,item){
-                
-                    this.counter -= 1
-                
+            minusCart(){
+                this.$store.state.counter--;
             },
-            plusCart:function(event,item){
-                    this.counter += 1
+            plusCart(){
+                this.$store.state.counter++;
             }
         }
 }
