@@ -15,12 +15,15 @@
             v-model="slide" 
             v-bind:interval="4000" 
             controls indicators fade
-            background="black"
             v-on:sliding-start="onSlideStart"
             v-on:sliding-end="onSlideEnd"
             >
-          <b-carousel-slide v-for="scene in scenes" v-html="scene.caption" v-bind:alt="scene.alt"
-          img v-bind:src="scene.src" class="scene_box">
+          <b-carousel-slide v-for="scene in scenes" 
+                        v-html="scene.caption" 
+                        v-bind:alt="scene.alt"
+                        v-bind:key="scene.index"
+                        v-bind:img-src="scene.src">
+          <!-- <img v-bind:src="scene.src" class="scene_box"> -->
           </b-carousel-slide>
 
           <!-- <hr>

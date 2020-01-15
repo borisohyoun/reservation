@@ -40,8 +40,4 @@ export default [
     em: '색색깔깔 포도 '
   },
 
-  {
-
-  }
-
 ]

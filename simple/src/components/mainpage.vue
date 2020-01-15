@@ -1,11 +1,24 @@
 <template>
 <div>
     <Navigation></Navigation>
-    <div class="child_wrap">
-            <router-link to=/food class="come_pic menu"><img v-bind:src="images.menu"/> <span class="over_text">메뉴보기</span></router-link>
+    <div class="child_wrap" v-bind:style="{backgroundImage:'url(' + images.home + ')',backgroundSize: 'cover',backgroundRepeat:'no-repeat',opacity:'0.5',height:'600px'}" alt="main wrap pic">
+        
+            <router-link to=/food class="come_pic menu">
+            <img v-bind:src="images.menu"/> 
+            <span class="over_text">메뉴보기</span>
+            </router-link>
+
             <span class="mascot"><img v-bind:src="images.mascot"/></span>
-            <router-link to="/around" class="come_pic around"><img v-bind:src="images.around"/> <span class="over_text">둘러보기</span></router-link>
-            <router-link to="/reservation" class="come_pic reservation"><img v-bind:src="images.reserve"/> <span class="over_text">예약하기</span> </router-link>
+            
+            <router-link to="/around" class="come_pic around">
+            <!-- <img v-bind:src="images.around"/>  -->
+            <span class="over_text">둘러보기</span>
+            </router-link>
+            
+            <router-link to="/reservation" class="come_pic reservation">
+            <!-- <img v-bind:src="images.reserve"/>  -->
+            <span class="over_text">예약하기</span> 
+            </router-link>
     </div>
     <Footer></Footer>
 </div>
@@ -17,9 +30,10 @@ export default {
             return{
                 images:{
                     mascot:require('@/assets/IMG_5290.jpeg'),
-                    menu:require('@/assets/coffee.jpg'),
+                    menu:require('@/assets/bev1_cup.png'),
                     around:require('@/assets/around.jpg'),
                     reserve:require('@/assets/foods.jpg'),
+                    home:require('@/assets/home.jpg')
                 }
             }
             
@@ -31,38 +45,23 @@ export default {
     border:2px solid black;
     margin:2rem 0; 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 50px;
-    grid-template-rows: repeat(4,100px);
+    grid-template-rows: repeat(2,275px);
 }
 .child_wrap>*{
     position: relative;
     /* border:2px solid green; */
 }
-.child_wrap img{
-    object-fit: fill;
-    width: 100%;
-    max-height: 100%;
-}
-.come_pic img{
-    opacity: 90%;
-}
-.come_pic img:hover{
-    opacity:70%;
-}
-.over_text:hover{
-
-}
 .reservation{
-    grid-column: 2/4;
-    grid-row: 3/5;
-
+    grid-column: 2;
+    grid-row: 2/3;
+    border:2px solid red;
 }
 .mascot{
-    grid-column: 2;
-    grid-row: 1 / 3;
-
-    border-radius: 50%;
+    grid-column: 4;
+    grid-row: 1 / 2;
+    border:2px solid blue;
     overflow: hidden;
 }
 .mascot img{
@@ -70,12 +69,19 @@ export default {
     height: 300px; */
 }
 .menu{
-    grid-column: 3;
-    grid-row: 1 / 3;
+    grid-column: 1;
+    grid-row: 2 / 3;
+    border:2px solid gold;
+}
+.menu img{
+    width:90px;
+    height: 120px;
+    float: right;
 }
 .around{
-    grid-column: 1;
-    grid-row: 1/5;
+    grid-column: 3;
+    grid-row: 2/3;
+    border:2px solid skyblue;
 
 }
 .over_text{
