@@ -9,19 +9,24 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'es6-promise/auto'
 
-import { store } from "./store"
 /* configs ... */
 
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
-Vue.prototype.$EventBus = new Vue();
+
+export const eventBus = new Vue({
+  methods: {
+    listItems (date) {
+      this.$emit('listItems', date)
+    }
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  store :store,
   template: '<App/>'
 })

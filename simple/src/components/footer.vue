@@ -31,7 +31,6 @@ export default {
 <style scoped>
     div {
         display: inline-block;
-        float: right;
     }
     .footer{
         border:2px solid yellow;
