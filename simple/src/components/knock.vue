@@ -33,7 +33,7 @@ export default{
 <style>
 .knock_wrap{
     margin: 0.5rem auto;
-    min-width:1024px;
+    min-width:1100px;
 }
 
 

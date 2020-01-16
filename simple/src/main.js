@@ -15,14 +15,6 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 
-export const eventBus = new Vue({
-  methods: {
-    listItems (date) {
-      this.$emit('listItems', date)
-    }
-  }
-})
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -3,21 +3,21 @@
         <b-container fluid class="cnt_wrap">
             <b-row class="mainTop">
                 <b-col offset="1" cols="10" md="10" class="top_wrap" >
-                <b-col cols="12" md="6" class="main_img">
-                    <img v-bind:src="data.listImage">
-                </b-col>
-                <b-col cols="12" md="6" class="main_exp">
-                    <div class="detail_wrap">
-                        <em>{{ data.em }}</em>
-                        <strong>{{ data.name }}</strong>
-                        <p>{{ data.explain }}</p> 
-                    </div>
-                    
-                    <div class="detail_price">
-                        <div>{{ data.price }}원(계산되는 버튼)</div>
-                        <counter></counter>
-                    </div>
-                </b-col>
+                    <b-col cols="12" md="6" class="main_img">
+                        <img v-bind:src="data.listImage">
+                    </b-col>
+                    <b-col cols="12" md="6" class="main_exp">
+                        <div class="detail_wrap">
+                            <em>{{ data.em }}</em>
+                            <strong>{{ data.name }}</strong>
+                            <p>{{ data.explain }}</p> 
+                        </div>
+                        <div class="detail_price">
+                            <counter></counter>
+                            <div v-bind:totalPrice="totalPrice">{{ totalprice }}</div>
+                            
+                        </div>
+                    </b-col>
                 </b-col>
             </b-row>
             <b-row class="exp_container">
@@ -29,7 +29,6 @@
     </div>
 </template>
 <script>
-import { eventBus } from '../main'
 import data from '../data/itemdetail'
 import counter from './counter'
 
@@ -63,13 +62,20 @@ export default {
     .main_img{
         /* bordeR:2px solid yellow; */
         float: left;
+        width: 477px;
+        height: 358px;
+        overflow: hidden;
     }
     .main_img img{
         /* border:2px solid slateblue; */
-        width: 477px;
-        height: 358px;
         margin:auto;
         display: block;
+        position: relative;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
     .main_exp{
         /* border:2px solid green; */
@@ -102,11 +108,15 @@ export default {
     .detail_price{
         /* border:2px solid green; */
         font-size: 0.8rem;
-        margin-top: 30px;
-        padding: 15px 0;
+        margin-top: 20px;
+        padding: 0 0 15px 0;
         border-width: 1px 0 0 0;
         border-style: solid;
         border-color: #f1f1f1;
+    }
+    .detail_price>em {
+        font-size: 24px;
+        font-style: normal;
     }
     .cart_wrap{
         /* border:2px solid gold; */
