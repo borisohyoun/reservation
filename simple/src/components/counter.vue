@@ -1,19 +1,20 @@
 <template>
     <div>
-        <em>{{ data.price }}원</em>
-        <div class="total">    
-            <div class="qua">
-                <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
-                <span class="show_count">{{ counter }}</span>
-                <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
+        <div class="goPay_wrap">
+            <em>{{ data.price }}원</em>
+            <div class="total">    
+                <p class="total_price">
+                    총 상품 금액 <span>{{ counterChild }}</span>  원
+                    <hr>
+                    총 상품 금액 <span> {{ totalPrice }}</span>
+                    <hr>
+                    <button v-on:click="changeUser"></button>
+                </p>
             </div>
-            <p class="total_price">
-                총 상품 금액 <span>{{ totalCost }}</span>  원
-            </p>
-        </div>
-        <div class="btn">
-            <button v-on:click="buyNow" href="" class="buy">바로구매</button>
-            <button v-on:click="addToCart" href="" class="cart">장바구니</button>
+            <div class="btn">
+                <button v-on:click="buyNow" href="" class="buy">바로구매</button>
+                <button v-on:click="addToCart" href="" class="cart">장바구니</button>
+            </div>
         </div>
     </div>
 </template>
@@ -21,55 +22,49 @@
 import data from '../data/itemdetail'
 export default {
     name:'counter',
+    props:{
+        counterChild : Number
+    },
     data(){
         const index = this.$route.params.contentId
         return{
             data : data[index],
-            counter:0,
-            currentCounter : this.counter
-        }  
+            payPrice : this.totalPrice
+        } 
     },
     methods:{
-        minusCart:function(){
-            this.counter -= 1;
-        },
-        plusCart:function(){
-            this.counter += 1
-        },
         addToCart:function(){
             this.items.push(this.item.id);
         },
         buyNow:function(){
             this.items.push()
         },
-        currentCounter:function(){
-            console.log(currentCounter);
+        changeUser:function(){
+            console.log(totalPrice)
         }
-
+        
     },
     computed:{
-        totalCost:function(){
-
-        },
+        totalPrice:function(){
+            // console.log(this.counterChild)
+            // console.log(this.data.price)
+            // console.log(this.counterChild * this.data.price)
+            this.counterChild * this.data.price
+        }
+    },
+    created(){
+        console.log(totalPrice)
     }
 }
 </script>
 <style scoped>
+    .goPay_wrap{
+        border-top: 1px solid #f1f1f1;
+    }
     .total{
         /* border:2px solid red; */
         position: relative;
         padding: 15px 0;
-        border-top: 1px solid #f1f1f1;
-    }
-    em {
-        font-size: 20px;
-        vertical-align: middle;
-        font-style: normal;
-    }
-    .qua{
-        border:2px solid green;
-        width: 103px;
-        text-align: center;
     }
     .total_price{
         border:2px solid yellow;
@@ -78,10 +73,11 @@ export default {
         top:20px;
     }
     .btn{
-        border:2px solid blue;
-        margin-top: 12px;
-        padding:0;
-        position:absolute;
+        border-top: 1px solid #f1f1f1;
+        margin-top: 25px;
+        padding:15px 0;
+        display: block;
+        /* position:absolute; */
         right:0;
     }
     .btn button {

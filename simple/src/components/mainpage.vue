@@ -29,10 +29,10 @@ export default {
     data(){
             return{
                 images:{
-                    mascot:require('@/assets/IMG_5290.jpeg'),
+                    mascot:require('@/assets/mascot.png'),
                     menu:require('@/assets/bev1_cup.png'),
-                    around:require('@/assets/around.jpg'),
-                    reserve:require('@/assets/foods.jpg'),
+                    around:require('@/assets/around1.jpg'),
+                    reserve:require('@/assets/home.jpg'),
                     home:require('@/assets/home.jpg')
                 }
             }
@@ -65,8 +65,11 @@ export default {
     overflow: hidden;
 }
 .mascot img{
-    /* width:300px;
-    height: 300px; */
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 20px;
+
 }
 .menu{
     grid-column: 1;

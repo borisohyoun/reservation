@@ -13,7 +13,11 @@
                             <p>{{ data.explain }}</p> 
                         </div>
                         <div class="detail_price">
-                            <counter></counter>
+                            <em>{{ data.price }}원</em>
+                                <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
+                                 <span class="show_count">{{ counter }}</span>
+                                <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
+                                <counter v-bind:counterChild="counter" v-on:totalPrice="payPrice"></counter>
                         </div>
                     </b-col>
                 </b-col>
@@ -32,16 +36,27 @@ import counter from './counter'
 
 export default {
     name:'detail',
-    // props:['name','price','explain','listImage'],
     data(){
         const index = this.$route.params.contentId
         return{
             data : data[index],
+            counter:0
         }   
     },
     components:{
         'counter':counter
     },
+    methods:{
+        minusCart:function(){
+            this.counter -= 1;
+        },
+        plusCart:function(){
+            this.counter += 1
+        },
+        payPrice:function(){
+            console.log('부모')
+        }
+    }
 
 }
 </script>
@@ -79,11 +94,24 @@ export default {
     }
     .exp_container{
         /* border:2px solid wheat; */
-        padding-top:190px;
+        padding-top:115px;
         text-align: center;
     }
     .exp_wrap{
         /* border:2px solid slateblue; */
+    }
+     em {
+        font-size: 20px;
+        vertical-align: middle;
+        font-style: normal;
+    }
+    .qua{
+        border:2px solid green;
+        width: 103px;
+        text-align: center;
+        position: absolute;
+        top:50%;
+        margin-top: -42px;
     }
     .detail_wrap > em{
         font-size: 16px;
@@ -109,6 +137,7 @@ export default {
         border-width: 1px 0 0 0;
         border-style: solid;
         border-color: #f1f1f1;
+        position: relative;
     }
     .detail_price>em {
         font-size: 24px;

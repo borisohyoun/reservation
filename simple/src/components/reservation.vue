@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="shop_wrap">
-            <b card group deck class="shop_list"> 
+            <b-card-group deck class="shop_list"> 
                 <b-card class="list_item" v-for="(value,index) in data" v-bind:key="value.name" >
                     <b-card-img v-bind:src="value.listImage" img-alt="Image" img-top></b-card-img>
                     <b-card-text class="bc_text" v-on:click="detail(index)">
@@ -19,7 +19,7 @@
                         <b-button href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
                     </template>
                 </b-card>
-            </b>
+            </b-card-group>
         </div>
     </div>
 </template>
@@ -30,12 +30,6 @@ export default {
     name:'reservation',
     data(){
         return{
-            images:{
-                    mascot:require('@/assets/1.png'),
-                    menu:require('@/assets/apple.jpg'),
-                    around:require('@/assets/lboricat.jpg'),
-                    reserve:require('@/assets/nanacat.jpg'),
-                },
             counter:0 ,
             data: data
         }
@@ -58,18 +52,19 @@ export default {
     border:2px solid brown;
     overflow: hidden;
     min-width:1024px;
+    width:90%;
+    margin: auto;
 }
 .shop_list{
     border:2px solid navy;
-    /* width:px; */
-    /* min-width:1024px; */
+    min-width:1024px;
     overflow: hidden;
     margin:0  auto;
     
 }
 .list_item{
     border:2px solid seagreen;
-    margin: 1rem;
+    margin: 0.8rem;
     float: left;
     max-width:260px;
     height:400px;

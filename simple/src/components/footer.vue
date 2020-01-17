@@ -2,13 +2,13 @@
     <div>
         <ul class="footer">
     
-                <button v-on:click="calText" >
+                <!-- <button v-on:click="calText" >
                     <i class="far fa-clock"></i>
                 </button>
             <li v-on:mouseover="github" class="fab fa-github"></li>
             <li v-on:mouseover="blog" class="fas fa-rss-square"></li>
             <li v-on:mouseover="contact" class="fas fa-mobile-alt"></li>
-            <li v-on:mouseover="goTop" class="fas fa-arrow-up"></li>
+            <li v-on:mouseover="goTop" class="fas fa-arrow-up"></li> -->
         </ul>
     </div>
 </template>

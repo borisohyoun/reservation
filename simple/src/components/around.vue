@@ -96,6 +96,8 @@
   .around_wrap {
     border: 2px solid green;
     overflow: hidden;
+    width:90%;
+    margin: auto;
   }
   .carousel{
     color:tomato;
