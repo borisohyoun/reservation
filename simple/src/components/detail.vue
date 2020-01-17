@@ -17,7 +17,6 @@
                                 <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
                                  <span class="show_count">{{ counter }}</span>
                                 <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
-                                <counter v-bind:counterChild="counter" v-on:totalPrice="payPrice"></counter>
                         </div>
                     </b-col>
                 </b-col>

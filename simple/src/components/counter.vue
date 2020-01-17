@@ -7,8 +7,6 @@
                     총 상품 금액 <span>{{ counterChild }}</span>  원
                     <hr>
                     총 상품 금액 <span> {{ totalPrice }}</span>
-                    <hr>
-                    <button v-on:click="changeUser"></button>
                 </p>
             </div>
             <div class="btn">
@@ -28,8 +26,7 @@ export default {
     data(){
         const index = this.$route.params.contentId
         return{
-            data : data[index],
-            payPrice : this.totalPrice
+            data : data[index]
         } 
     },
     methods:{
@@ -38,22 +35,13 @@ export default {
         },
         buyNow:function(){
             this.items.push()
-        },
-        changeUser:function(){
-            console.log(totalPrice)
         }
         
     },
     computed:{
         totalPrice:function(){
-            // console.log(this.counterChild)
-            // console.log(this.data.price)
-            // console.log(this.counterChild * this.data.price)
-            this.counterChild * this.data.price
+            return this.counterChild * this.data.price
         }
-    },
-    created(){
-        console.log(totalPrice)
     }
 }
 </script>
