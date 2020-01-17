@@ -1,14 +1,9 @@
 <template>
     <div>
-        <div class="goPay_wrap">
-            <em>{{ data.price }}원</em>
-            <div class="total">    
-                <p class="total_price">
-                    총 상품 금액 <span>{{ counterChild }}</span>  원
-                    <hr>
-                    총 상품 금액 <span> {{ totalPrice }}</span>
-                </p>
-            </div>
+        <div class="goPay_wrap">  
+            <p class="total_price">
+                총 상품 금액 <span>{{ totalPrice }}</span>  원
+            </p>
             <div class="btn">
                 <button v-on:click="buyNow" href="" class="buy">바로구매</button>
                 <button v-on:click="addToCart" href="" class="cart">장바구니</button>
@@ -48,17 +43,21 @@ export default {
 <style scoped>
     .goPay_wrap{
         border-top: 1px solid #f1f1f1;
+        /* border:2px solid green; */
+        padding:15px 0 ;
+        position: relative;
+        margin-top: 6px;
     }
     .total{
-        /* border:2px solid red; */
+        /* border:2px solid pink; */
         position: relative;
         padding: 15px 0;
     }
     .total_price{
-        border:2px solid yellow;
+        /* border:2px solid yellow; */
         position: absolute;
         right:0;
-        top:20px;
+        top:8px;
     }
     .btn{
         border-top: 1px solid #f1f1f1;

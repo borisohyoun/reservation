@@ -14,9 +14,12 @@
                         </div>
                         <div class="detail_price">
                             <em>{{ data.price }}원</em>
+                            <div class="count_wrap">
                                 <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
                                  <span class="show_count">{{ counter }}</span>
                                 <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <counter v-bind:counterChild="counter"></counter>
                         </div>
                     </b-col>
                 </b-col>
@@ -51,9 +54,6 @@ export default {
         },
         plusCart:function(){
             this.counter += 1
-        },
-        payPrice:function(){
-            console.log('부모')
         }
     }
 
@@ -105,7 +105,7 @@ export default {
         font-style: normal;
     }
     .qua{
-        border:2px solid green;
+        /* border:2px solid green; */
         width: 103px;
         text-align: center;
         position: absolute;
@@ -132,7 +132,7 @@ export default {
         /* border:2px solid green; */
         font-size: 0.8rem;
         margin-top: 20px;
-        padding: 0 0 15px 0;
+        padding: 5px 0 15px 0;
         border-width: 1px 0 0 0;
         border-style: solid;
         border-color: #f1f1f1;
@@ -142,6 +142,13 @@ export default {
         font-size: 24px;
         font-style: normal;
     }
+    .count_wrap{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        margin-top: -39px;
+        left: 0;
+        }
     .cart_wrap{
         /* border:2px solid gold; */
         margin-top: 16px
