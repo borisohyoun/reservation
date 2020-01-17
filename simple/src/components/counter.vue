@@ -26,7 +26,7 @@ export default {
         return{
             data : data[index],
             counter:0,
-            price :data.price
+            currentCounter : this.counter
         }  
     },
     methods:{
@@ -42,16 +42,16 @@ export default {
         buyNow:function(){
             this.items.push()
         },
-        counter:function(num){
-            this.couter.$emit('totalPrice',)
+        currentCounter:function(){
+            console.log(currentCounter);
         }
+
     },
     computed:{
         totalCost:function(){
-            this.counter * this.price
-        }
+
+        },
     }
-    
 }
 </script>
 <style scoped>

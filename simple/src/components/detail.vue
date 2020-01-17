@@ -14,8 +14,6 @@
                         </div>
                         <div class="detail_price">
                             <counter></counter>
-                            <div v-bind:totalPrice="totalPrice">{{ totalprice }}</div>
-                            
                         </div>
                     </b-col>
                 </b-col>
@@ -38,14 +36,12 @@ export default {
     data(){
         const index = this.$route.params.contentId
         return{
-            data : data[index]
+            data : data[index],
         }   
-    },
-    methods:{
     },
     components:{
         'counter':counter
-    }
+    },
 
 }
 </script>
