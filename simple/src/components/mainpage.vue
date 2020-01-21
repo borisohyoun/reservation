@@ -1,8 +1,7 @@
 <template>
 <div>
-    <Navigation></Navigation>
     <div class="child_wrap" v-bind:style="{backgroundImage:'url(' + images.home + ')',backgroundSize: 'cover',backgroundRepeat:'no-repeat',opacity:'0.5',height:'600px'}" alt="main wrap pic">
-        
+
             <router-link to=/food class="come_pic menu">
             <img v-bind:src="images.menu"/> 
             <span class="over_text">메뉴보기</span>
@@ -19,7 +18,7 @@
             <!-- <img v-bind:src="images.reserve"/>  -->
             <span class="over_text">예약하기</span> 
             </router-link>
-    </div>
+        </div>
     <Footer></Footer>
 </div>
 </template>
@@ -33,7 +32,8 @@ export default {
                     menu:require('@/assets/bev1_cup.png'),
                     around:require('@/assets/around1.jpg'),
                     reserve:require('@/assets/home.jpg'),
-                    home:require('@/assets/home.jpg')
+                    home:require('@/assets/home.jpg'),
+                    aroundBack:require('@/assets/around_back.png')
                 }
             }
             

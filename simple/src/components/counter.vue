@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="goPay_wrap">
-            <em>{{ data.price }}원</em>
+            
             <div class="total">    
                 <p class="total_price">
                     총 상품 금액 <span> {{ totalPrice }}</span>
