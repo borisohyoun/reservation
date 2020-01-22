@@ -32,10 +32,6 @@
           </template>
         </b-carousel-slide> 
       </b-carousel>
-        <p class="mt-4">
-          Slide #: {{ slide }}<br>
-          Sliding: {{ sliding }}
-        </p>
       </div>
     </div>
   </div>
@@ -94,21 +90,21 @@
 </script>
 <style scoped>
   .around_wrap {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     overflow: hidden;
     width:90%;
     margin: auto;
   }
   .carousel{
-    color:tomato;
+    /* color:tomato; */
   }
   .image_container {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 100%;
     height: 480px;
     overflow: hidden;
   }
   .scene_box {
-    color:honeydew;
+    /* color:honeydew; */
   }
 </style>

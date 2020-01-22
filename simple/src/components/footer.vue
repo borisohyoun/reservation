@@ -25,6 +25,7 @@ export default {
         position: fixed;
         bottom: 10px;
         right: 10px;
+        z-index: 500;
     }
     .footer >li{
         border:1px solid darkgreen;

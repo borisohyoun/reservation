@@ -14,10 +14,7 @@
                         </div>
                         <div class="detail_price">
                             <em>{{ data.price }}원</em>
-                                <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
-                                 <span class="show_count">{{ counter }}</span>
-                                <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
-                                <counter v-bind:counterChild="counter"></counter>
+                            <counter></counter>
                         </div>
                     </b-col>
                 </b-col>

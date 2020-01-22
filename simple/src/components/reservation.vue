@@ -15,8 +15,8 @@
                             <span class="show_count">{{ counter }}</span>
                             <button v-on:click="plusCart"> <i class="fas fa-plus"></i></button>
                         </span>
-                        <b-button href="#" variant="primary" class="if" >결제하기</b-button>
-                        <b-button href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
+                        <b-button cols="12" sm="4" href="#" variant="primary" class="if" >결제하기</b-button>
+                        <b-button cols="12" sm="4" href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
                     </template>
                 </b-card>
             </b-card-group>
@@ -49,39 +49,28 @@ export default {
 
 <style scoped>
 .shop_wrap{
-    border:2px solid brown;
     overflow: hidden;
     min-width:1024px;
     width:90%;
     margin: auto;
 }
 .shop_list{
-    border:2px solid navy;
     min-width:1024px;
     overflow: hidden;
     margin:0  auto;
-    
 }
 .list_item{
-    border:2px solid seagreen;
+    border:1px solid seagreen;
     margin: 0.8rem;
     float: left;
     max-width:260px;
-    height:400px;
     position: relative;
 }
 .card-body{
     padding: 0.5rem 1rem;
 }
-.is{
-    color:skyblue;
-    border:2px solid skyblue;
-}
 img{
-    color:skyblue;
-    /* max-width: 20rem; */
     height:160px;
-    border:2px solid skyblue;
 }
 .item_title{
     font-style: bold;
@@ -94,8 +83,9 @@ img{
     font-size: 0.8rem;
 }
 .if{
-    bordeR:2px solid red;
     display: inline-block;
+    font-size: 10px;
+    margin-bottom: 0;
 }
 .btn-primary{
     border-color: none;
@@ -104,9 +94,6 @@ img{
 }
 .btn-primary:hover{
     background: darkgreen;
-}
-.text_muted{
-    border:2px solid red;
 }
 
 </style>
