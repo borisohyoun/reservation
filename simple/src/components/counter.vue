@@ -5,13 +5,16 @@
                     총 상품 금액 <span> {{ totalPrice }}원</span>
                 </p>
                 <div class="cart_btn">
-                    <button v-on:click="minusCart"><i class="fas fa-minus"></i></button>
+                    <button v-on:click="minusCart" v-if="minCount"><i class="fas fa-minus"></i></button>
+                    <button disabled="true" v-else ><i class="fas fa-minus"></i></button>
                     <span class="show_count">{{ counter }}</span>
-                    <button v-on:click="plusCart"><i class="fas fa-plus"></i></button>
+                    <button v-on:click="plusCart" v-if="canAddCart"><i class="fas fa-plus"></i></button>
+                    <button disabled="true" v-else ><i class="fas fa-plus"></i></button>
+                    <span>(주문 가능 갯수:{{ data.availableInventory }})</span>
                 </div>
             <div class="btn">
                 <button v-on:click="buyNow" href="" class="buy">바로구매</button>
-                <button v-on:click="addToCart" href="" class="cart">장바구니</button>
+                <button v-on:click="addToCart"  href="" class="cart">장바구니</button>
             </div>
         </div>
     </div>
@@ -24,13 +27,14 @@ export default {
         const index = this.$route.params.contentId
         return{
             data : data[index],
-            payPrice : this.totalPrice,
-            counter:0
+            counter:0,
         } 
     },
     methods:{
         addToCart:function(){
-            this.items.push(this.item.id);
+            console.log("clicked")
+            console.log(this.data.id)
+            this.$router.push(this.data.id)
         },
         buyNow:function(){
             this.items.push()
@@ -45,6 +49,13 @@ export default {
     computed:{
         totalPrice:function(){
             return this.counter * this.data.price
+        },
+        canAddCart:function(){
+            return this.data.availableInventory > this.counter;
+        },
+        minCount:function(){
+            console.log(this.counter)
+            return this.counter > 1
         }
     }
 }

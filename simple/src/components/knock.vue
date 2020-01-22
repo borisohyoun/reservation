@@ -14,6 +14,7 @@ import around from './around.vue'
 import food from './food.vue'
 import reservation from './reservation.vue'
 import detail from './detail.vue'
+import cart from './cart.vue'
 
 export default{
     name:'knock',
@@ -24,7 +25,8 @@ export default{
         'around':around,
         'food':food,
         'reservation':reservation,
-        'detail':detail
+        'detail':detail,
+        'cart':cart
     },
     
 }

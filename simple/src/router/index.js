@@ -5,6 +5,7 @@ import around from '@/components/around'
 import food from '@/components/food'
 import reservation from '@/components/reservation'
 import detail from '@/components/detail'
+import cart from '@/components/cart'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/detail/:contentId',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
     }
   ]
 })

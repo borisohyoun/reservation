@@ -10,13 +10,7 @@
                         <p class="item_price if"> {{ value.price }}원 </p>
                     </b-card-text>
                     <template v-slot:footer>
-                        <span class="text-muted">
-                            <button v-on:click="minusCart" ><i class="fas fa-minus"></i></button>
-                            <span class="show_count">{{ counter }}</span>
-                            <button v-on:click="plusCart"> <i class="fas fa-plus"></i></button>
-                        </span>
-                        <b-button cols="12" sm="4" href="#" variant="primary" class="if" >결제하기</b-button>
-                        <b-button cols="12" sm="4" href="#" variant="primary" class="if" ><i class="fas fa-cart-plus"></i></b-button>
+                        <counter></counter>
                     </template>
                 </b-card>
             </b-card-group>
@@ -26,12 +20,17 @@
 
 <script>
 import data from '../data/itemdetail'
+import counter from './counter'
 export default {
     name:'reservation',
+    components:{
+        'counter':counter
+    },
     data(){
+        const index = this.$route.params.contentId
         return{
             counter:0 ,
-            data: data
+            data : data,
         }
     },
     methods:{

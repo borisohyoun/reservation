@@ -6,7 +6,8 @@ export default [
     price: '6500',
     listImage: require('@/assets/apple.jpeg'),
     alt: 'apple',
-    em: '꿀이 흐르는 사과 '
+    em: '꿀이 흐르는 사과 ',
+    availableInventory: 4
 
   },
 
@@ -17,7 +18,8 @@ export default [
     price: '4800',
     listImage: require('@/assets/strawberry.jpeg'),
     alt: 'straberry',
-    em: '벌크업한 딸기'
+    em: '벌크업한 딸기',
+    availableInventory: 2
   },
 
   {
@@ -27,7 +29,8 @@ export default [
     price: '2300',
     listImage: require('@/assets/pear.jpeg'),
     alt: 'pear',
-    em: '제삿상에 오르는 배'
+    em: '제삿상에 오르는 배',
+    availableInventory: 3
   },
 
   {
@@ -37,7 +40,8 @@ export default [
     price: '1000',
     listImage: require('@/assets/grape.png'),
     alt: 'grape',
-    em: '색색깔깔 포도 '
+    em: '색색깔깔 포도 ',
+    availableInventory: 12
   },
 
 ]
