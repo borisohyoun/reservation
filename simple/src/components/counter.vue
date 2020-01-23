@@ -33,11 +33,15 @@ export default {
     methods:{
         addToCart:function(){
             console.log("clicked")
-            console.log(this.data.id)
-            this.$router.push(this.data.id)
+            console.log(this.counter)
+            this.$router.push({
+                name:'cart'
+            })
         },
         buyNow:function(){
-            this.items.push()
+            this.$router.push({
+                name:'payment'
+            })
         },
          minusCart:function(){
             this.counter -= 1;
@@ -48,13 +52,14 @@ export default {
     },
     computed:{
         totalPrice:function(){
-            return this.counter * this.data.price
+            console.log(this.data.price);
+            console.log(this.counter)
+            return this.counter * this.data.price;
         },
         canAddCart:function(){
             return this.data.availableInventory > this.counter;
         },
         minCount:function(){
-            console.log(this.counter)
             return this.counter > 1
         }
     }

@@ -1,11 +1,17 @@
 <template>
     <div>
-        cart 
+        cart
     </div>
 </template>
 <script>
+import data from '../data/itemdetail'
+import counter from './counter'
+import detail from './detail'
+
+
 export default {
-    name:'cart'
+    name:'cart',
+
 }
 </script> 
 <style scoped>

@@ -15,6 +15,7 @@ import food from './food.vue'
 import reservation from './reservation.vue'
 import detail from './detail.vue'
 import cart from './cart.vue'
+import payment from './payment.vue'
 
 export default{
     name:'knock',
@@ -26,7 +27,8 @@ export default{
         'food':food,
         'reservation':reservation,
         'detail':detail,
-        'cart':cart
+        'cart':cart,
+        'payment':payment
     },
     
 }

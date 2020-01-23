@@ -7,11 +7,7 @@
                     <b-card-text class="bc_text" v-on:click="detail(index)">
                         <p class="item_title">{{ value.name }}</p>
                         <p class="item_explain">{{ value.explain }}</p>
-                        <p class="item_price if"> {{ value.price }}원 </p>
                     </b-card-text>
-                    <template v-slot:footer>
-                        <counter></counter>
-                    </template>
                 </b-card>
             </b-card-group>
         </div>

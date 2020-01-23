@@ -1,7 +1,6 @@
 <template>
 <div>
     <div class="child_wrap" v-bind:style="{backgroundImage:'url(' + images.home + ')',backgroundSize: 'cover',backgroundRepeat:'no-repeat',opacity:'0.5',height:'600px'}" alt="main wrap pic">
-
             <router-link to=/food class="come_pic menu">
             <img v-bind:src="images.menu"/> 
             <span class="over_text">메뉴보기</span>
@@ -19,7 +18,6 @@
             <span class="over_text">예약하기</span> 
             </router-link>
         </div>
-    <Footer></Footer>
 </div>
 </template>
 <script>
@@ -61,7 +59,6 @@ export default {
 .mascot{
     grid-column: 4;
     grid-row: 1 / 2;
-    border:2px solid blue;
     overflow: hidden;
 }
 .mascot img{
