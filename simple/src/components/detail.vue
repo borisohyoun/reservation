@@ -59,20 +59,16 @@ export default {
         padding-top: 80px;
     }
     .mainTop{
-        /* border:2px solid red;     */
     }
     .top_wrap{
-        /* border:2px solid hotpink; */
     }
     .main_img{
-        /* bordeR:2px solid yellow; */
         float: left;
         width: 477px;
         height: 358px;
         overflow: hidden;
     }
     .main_img img{
-        /* border:2px solid slateblue; */
         margin:auto;
         display: block;
         position: relative;
@@ -83,16 +79,13 @@ export default {
         transform: translate(-50%, -50%);
     }
     .main_exp{
-        /* border:2px solid green; */
         float: left;
     }
     .exp_container{
-        /* border:2px solid wheat; */
         padding-top:115px;
         text-align: center;
     }
     .exp_wrap{
-        /* border:2px solid slateblue; */
     }
      em {
         font-size: 20px;
@@ -112,19 +105,16 @@ export default {
         font-style: normal;
     }
     .detail_wrap > strong{
-        /* border:2px solid red; */
         display: block;
         margin-top: 4px;
         color: #00000a;
         font-size: 30px;
     }
     .detail_wrap > p {
-        /* border:2px solid yellow; */
-        padding-top: 25px;
+        padding-top: 15px;
         color: #999;
     }
     .detail_price{
-        /* border:2px solid green; */
         font-size: 0.8rem;
         margin-top: 20px;
         padding: 0 0 15px 0;
@@ -138,7 +128,6 @@ export default {
         font-style: normal;
     }
     .cart_wrap{
-        /* border:2px solid gold; */
         margin-top: 16px
     }
 </style>

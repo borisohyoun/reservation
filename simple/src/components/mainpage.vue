@@ -14,7 +14,7 @@
             </router-link>
             
             <router-link to="/reservation" class="come_pic reservation">
-            <!-- <img v-bind:src="images.reserve"/>  -->
+            <img v-bind:src="images.reserve"/> 
             <span class="over_text">예약하기</span> 
             </router-link>
         </div>
@@ -29,7 +29,7 @@ export default {
                     mascot:require('@/assets/mascot.png'),
                     menu:require('@/assets/bev1_cup.png'),
                     around:require('@/assets/around1.jpg'),
-                    reserve:require('@/assets/home.jpg'),
+                    reserve:require('@/assets/go_reservation.png'),
                     home:require('@/assets/home.jpg'),
                     aroundBack:require('@/assets/around_back.png')
                 }
@@ -43,7 +43,7 @@ export default {
     border:2px solid black;
     margin:2rem 0; 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 280px);
     grid-gap: 50px;
     grid-template-rows: repeat(2,275px);
 }
@@ -55,6 +55,15 @@ export default {
     grid-column: 2;
     grid-row: 2/3;
     border:2px solid red;
+}
+.reservation img{
+    width:100px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    top: 3px;
+
 }
 .mascot{
     grid-column: 4;
